@@ -25,7 +25,7 @@
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 
   /* Nav */
-  nav{position:sticky;top:0;z-index:10;background:rgba(7,7,13,.92);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(255,255,255,.12)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(7,7,13,.92);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Nunito,"Segoe UI",-apple-system,sans-serif;font-weight:800;font-size:25px;letter-spacing:-.01em}
   .brand .ona{background:linear-gradient(90deg,#8B9BFF,#C08BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -54,7 +54,7 @@
   .grad{background:linear-gradient(90deg,#9DB6FF,#C4A8FF 50%,#FFB08F);-webkit-background-clip:text;background-clip:text;color:transparent}
   .lead{font-size:clamp(18px,2.2vw,22px);color:var(--dark-muted);max-width:680px;margin:0 auto}
   .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;border:0;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
   .btn-primary{background:linear-gradient(90deg,#4F5BF0,#7C5CF6);color:#fff;box-shadow:0 10px 30px rgba(99,102,241,.45)}
   .btn-primary:hover{transform:translateY(-1px)}
   .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.2)}
@@ -106,7 +106,7 @@
   .cta .intro{color:var(--dark-muted)}
   form{display:grid;gap:12px}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--dark-line);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:15px;outline:none;transition:border-color .2s ease,background .2s ease}
+  input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--dark-line);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
   input:focus,textarea:focus{border-color:#6A8CFF}
   input::placeholder,textarea::placeholder{color:#7D8194}
   .hp{display:none}
@@ -164,7 +164,7 @@
 
       <div class="menu">
         <div class="card">
-          <div class="icon i1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/><path d="M3 20h18"/></svg></div>
+          <div class="icon i1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div>
           <div class="course">Starter</div>
           <h3>Copilot Ready</h3>
           <p>Get your team actually using Microsoft 365 Copilot, safely.</p>
@@ -218,7 +218,7 @@
     <div class="wrap">
       <div class="cta">
         <div>
-          <div class="kicker" style="color:#C4A8FF">Now cooking</div>
+          <div class="kicker" style="color:#C4A8FF">Coming in 2027</div>
           <h2>Reserve your table.</h2>
           <p class="intro">Leave your details and we'll let you know when we launch.</p>
         </div>
