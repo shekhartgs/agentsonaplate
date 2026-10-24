@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agents on a Plate — AI agents, ready to serve</title>
+<meta name="description" content="Ready-made AI agents and automations for small and mid-size businesses. Built on Microsoft. Live in days, not months.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --ink:#0B0B12; --muted:#5B5F6B; --line:#E6E8EE; --soft:#F5F6FA;
+    --dark:#07070D; --dark-2:#11121C; --dark-line:#24263A; --dark-muted:#A3A7B7;
+    --accent:#3B6CF6; --accent-2:#8B5CF6; --warm:#FF7A45;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI Semilight","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  b,strong,.semi{font-family:"Segoe UI Semibold","Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;font-weight:600}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(7,7,13,.92);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:Nunito,"Segoe UI",-apple-system,sans-serif;font-weight:800;font-size:25px;letter-spacing:-.01em}
+  .brand .ona{background:linear-gradient(90deg,#8B9BFF,#C08BFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .mark{width:34px;height:34px;border-radius:50%;background:conic-gradient(from 210deg,var(--accent),var(--accent-2),var(--warm),var(--accent));display:grid;place-items:center}
+  nav .wrap{height:72px}
+  .mark i{width:20px;height:20px;border-radius:50%;background:var(--dark);box-shadow:0 0 0 3px rgba(255,255,255,.12) inset}
+  .navlinks{display:flex;gap:28px;align-items:center}
+  .navlinks a{color:#C9CCD8;text-decoration:none;font-size:14px}
+  .navlinks a:hover{color:#fff}
+  .pill{background:linear-gradient(90deg,#4F5BF0,#7C5CF6);color:#fff!important;padding:8px 16px;border-radius:999px;font-weight:600;font-family:"Segoe UI",-apple-system,sans-serif}
+
+  /* Hero */
+  .hero{background:var(--dark);color:#fff;position:relative;overflow:hidden;padding:120px 0 140px;text-align:center}
+  .hero::before{content:"";position:absolute;inset:-40% -10% auto;height:900px;
+    background:radial-gradient(40% 50% at 30% 40%,rgba(59,108,246,.45),transparent 70%),
+               radial-gradient(35% 45% at 70% 35%,rgba(139,92,246,.38),transparent 70%),
+               radial-gradient(30% 35% at 55% 70%,rgba(255,122,69,.22),transparent 70%);
+    filter:blur(20px);pointer-events:none}
+  .hero::after{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:56px 56px;mask-image:radial-gradient(60% 60% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(60% 60% at 50% 40%,#000,transparent);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#D6D9E6;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);padding:6px 14px;border-radius:999px}
+  .dot{width:7px;height:7px;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+  h1{font-weight:300;font-size:clamp(42px,7.4vw,88px);line-height:1.02;letter-spacing:-.035em;margin:28px auto 22px;max-width:980px}
+  .grad{background:linear-gradient(90deg,#9DB6FF,#C4A8FF 50%,#FFB08F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:clamp(18px,2.2vw,22px);color:var(--dark-muted);max-width:680px;margin:0 auto}
+  .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+  .btn-primary{background:linear-gradient(90deg,#4F5BF0,#7C5CF6);color:#fff;box-shadow:0 10px 30px rgba(99,102,241,.45)}
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.2)}
+  .btn-ghost:hover{background:rgba(255,255,255,.06)}
+  .built{margin-top:64px;font-size:13px;color:#7D8194;letter-spacing:.04em}
+  .stack{display:flex;gap:12px 28px;justify-content:center;flex-wrap:wrap;margin-top:14px;color:#C9CCD8;font-size:15px}
+  .stack span{opacity:.85}
+
+  /* Sections */
+  section{padding:120px 0}
+  .kicker{font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  h2{font-weight:300;font-size:clamp(32px,4.6vw,54px);line-height:1.08;letter-spacing:-.03em;margin:14px 0 18px;max-width:760px}
+  .intro{color:var(--muted);font-size:19px;max-width:640px}
+
+  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+  .card{position:relative;background:var(--soft);border:1px solid var(--line);border-radius:24px;padding:34px 30px 30px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+  .card:hover{transform:translateY(-4px);background:#fff;box-shadow:0 24px 60px -24px rgba(16,24,64,.25)}
+  .icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:26px;color:#fff}
+  .i1{background:linear-gradient(135deg,#3B6CF6,#6A8CFF)}
+  .i2{background:linear-gradient(135deg,#8B5CF6,#B08CFF)}
+  .i3{background:linear-gradient(135deg,#FF7A45,#FFA37E)}
+  .course{font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .card h3{font-weight:400;font-size:26px;letter-spacing:-.02em;margin:6px 0 12px}
+  .card p{color:var(--muted);font-size:16px}
+  .card ul{list-style:none;margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+  .card li{font-size:15px;padding:5px 0 5px 24px;position:relative}
+  .card li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+
+  /* Steps */
+  .dark{background:var(--dark);color:#fff}
+  .dark .intro{color:var(--dark-muted)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+  .step{border:1px solid var(--dark-line);background:linear-gradient(180deg,var(--dark-2),var(--dark));border-radius:24px;padding:32px}
+  .num{font-size:56px;font-weight:200;letter-spacing:-.04em;line-height:1;background:linear-gradient(90deg,#9DB6FF,#C4A8FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step h4{font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:20px;margin:22px 0 8px}
+  .step p{color:var(--dark-muted);font-size:16px}
+
+  /* Principles */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
+  .pillar{padding:28px 24px 0 0}
+  .pillar h5{font-family:"Segoe UI",-apple-system,sans-serif;font-weight:600;font-size:17px;margin-bottom:6px}
+  .pillar p{color:var(--muted);font-size:15px}
+
+  /* Contact */
+  .cta{background:var(--dark);border-radius:32px;padding:80px 48px;color:#fff;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .cta::before{content:"";position:absolute;width:700px;height:700px;right:-200px;top:-300px;background:radial-gradient(closest-side,rgba(139,92,246,.4),transparent);pointer-events:none}
+  .cta>*{position:relative}
+  .cta h2{margin-top:0}
+  .cta .intro{color:var(--dark-muted)}
+  form{display:grid;gap:12px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--dark-line);background:rgba(255,255,255,.04);color:#fff;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
+  input:focus,textarea:focus{border-color:#6A8CFF}
+  input::placeholder,textarea::placeholder{color:#7D8194}
+  .hp{display:none}
+  form .btn{justify-self:start;margin-top:6px}
+
+  footer{padding:48px 0 56px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px}
+
+  @media (max-width:900px){
+    .menu,.steps{grid-template-columns:1fr}
+    .pillars{grid-template-columns:1fr 1fr}
+    .cta{grid-template-columns:1fr;padding:48px 24px}
+    .navlinks a:not(.pill){display:none}
+    .brand{font-size:19px;white-space:nowrap}
+    .pill{white-space:nowrap;font-size:13px;padding:7px 12px}
+    section{padding:84px 0}
+    .hero{padding:88px 0 100px}
+  }
+  @media (max-width:520px){ .row{grid-template-columns:1fr} .pillars{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><span class="mark"><i></i></span><span>Agents <span class="ona">on a</span> Plate</span></a>
+    <div class="navlinks">
+      <a href="#menu">Solutions</a>
+      <a href="#how">How it works</a>
+      <a href="#contact" class="pill">Save me a seat</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Now cooking. Come back early 2027</span>
+    <h1>AI agents, <span class="grad">ready to serve</span> your business.</h1>
+    <p class="lead">Ready-made AI agents and automations for small and mid-size businesses. Built on Microsoft. Live in days, not months.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#contact">Save me a seat →</a>
+      <a class="btn btn-ghost" href="#menu">See the menu</a>
+    </div>
+    <div class="built">BUILT ON</div>
+    <div class="stack"><span>Microsoft 365 Copilot</span><span>Copilot Studio</span><span>Azure AI Foundry</span><span>Power Automate</span></div>
+  </div>
+</header>
+
+<main>
+  <section id="menu">
+    <div class="wrap">
+      <div class="kicker">On the menu</div>
+      <h2>Three ways to put AI to work.</h2>
+      <p class="intro">Fixed-scope, fixed-price packages. No year-long projects, no surprises.</p>
+
+      <div class="menu">
+        <div class="card">
+          <div class="icon i1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div>
+          <div class="course">Starter</div>
+          <h3>Copilot Ready</h3>
+          <p>Get your team actually using Microsoft 365 Copilot, safely.</p>
+          <ul><li>Readiness &amp; data check</li><li>Guided rollout</li><li>Hands-on team training</li></ul>
+        </div>
+        <div class="card">
+          <div class="icon i2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l.9-5.4A8 8 0 1 1 21 12z"/></svg></div>
+          <div class="course">Main</div>
+          <h3>Customer Service Agent</h3>
+          <p>A 24/7 AI agent that answers, books and escalates to your team.</p>
+          <ul><li>Website or Teams</li><li>Grounded on your content</li><li>Human handoff built in</li></ul>
+        </div>
+        <div class="card">
+          <div class="icon i3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M17 15l3 3-3 3"/></svg></div>
+          <div class="course">Chef's special</div>
+          <h3>Process Automation</h3>
+          <p>Invoices, emails and reports handled for you, end to end.</p>
+          <ul><li>Document extraction</li><li>Approvals &amp; alerts</li><li>Clean reporting</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="dark">
+    <div class="wrap">
+      <div class="kicker" style="color:#9DB6FF">How it works</div>
+      <h2>From idea to working agent in three steps.</h2>
+      <p class="intro">We bring a proven recipe. You bring the business.</p>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h4>Pick</h4><p>Choose the package that tackles your biggest time-waster.</p></div>
+        <div class="step"><div class="num">02</div><h4>Plate</h4><p>We set it up inside your own Microsoft environment, tuned to how you work.</p></div>
+        <div class="step"><div class="num">03</div><h4>Serve</h4><p>Go live, train your team and track the hours you get back.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="kicker">Our principles</div>
+      <h2>Enterprise-grade AI, sized for growing businesses.</h2>
+      <div class="pillars">
+        <div class="pillar"><h5>Your data stays yours</h5><p>Deployed in your own Microsoft tenant, under your control.</p></div>
+        <div class="pillar"><h5>Fast to value</h5><p>Templates mean days to launch, not months.</p></div>
+        <div class="pillar"><h5>Clear pricing</h5><p>Fixed setup and simple monthly support.</p></div>
+        <div class="pillar"><h5>Humans in the loop</h5><p>People approve what matters. AI does the rest.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <div class="kicker" style="color:#C4A8FF">Now cooking</div>
+          <h2>Reserve your table.</h2>
+          <p class="intro">Leave your details and we'll let you know when we launch.</p>
+        </div>
+        <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io) -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="row">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Work email" required>
+          </div>
+          <input type="text" name="company" placeholder="Company">
+          <textarea name="message" rows="4" placeholder="What would you like to automate?"></textarea>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+          <button class="btn btn-primary" type="submit">Save me a seat →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Agents on a Plate</span>
+    <span>agentsonaplate.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
